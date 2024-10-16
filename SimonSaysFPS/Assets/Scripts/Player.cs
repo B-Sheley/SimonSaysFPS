@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float Speed;
+    public float speed;
     public float groundDrag;
 
 
@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
-    Vector3 Direction;
+    Vector3 direction;
 
     Rigidbody rb;
 
@@ -49,9 +49,9 @@ public class Player : MonoBehaviour
 
     private void playerMove()
     {
-        Direction = orientation.forward * verticalInput + orientation.right * horizontalInput;
+        direction = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(Direction.normalized * Speed * 10f, ForceMode.Force);
+        rb.AddForce(direction.normalized * speed * 10f, ForceMode.Force);
 
     }
 
@@ -59,9 +59,9 @@ public class Player : MonoBehaviour
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (flatVel.magnitude > Speed)
+        if (flatVel.magnitude > speed)
         {
-            Vector3 limitedVel = flatVel.normalized * Speed;
+            Vector3 limitedVel = flatVel.normalized * speed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
         }
     }
