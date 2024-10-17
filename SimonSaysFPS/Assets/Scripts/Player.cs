@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public float speed;
+
     public float groundDrag;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float jumpForce;
+    private bool isGrounded = true;
 
 
     public Transform orientation;
@@ -44,6 +47,10 @@ public class Player : MonoBehaviour
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        {
+            Jump();
+        }
 
     }
 
@@ -51,7 +58,8 @@ public class Player : MonoBehaviour
     {
         direction = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        rb.AddForce(direction.normalized * speed * 10f, ForceMode.Force);
+        rb.AddForce(direction.normalized * moveSpeed * 10f, ForceMode.Force);
+        
 
     }
 
@@ -59,10 +67,31 @@ public class Player : MonoBehaviour
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
 
-        if (flatVel.magnitude > speed)
+        if (flatVel.magnitude > moveSpeed)
         {
-            Vector3 limitedVel = flatVel.normalized * speed;
+            Vector3 limitedVel = flatVel.normalized * moveSpeed;
             rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
+        }
+    }
+
+    void Jump()
+    {
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
         }
     }
 }

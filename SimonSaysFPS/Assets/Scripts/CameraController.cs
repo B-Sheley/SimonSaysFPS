@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] GameObject player;
     public Transform cameraPosition;
     public float xSensitivity;
     public float ySensitivity;
@@ -36,5 +38,6 @@ public class CameraController : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        player.gameObject.GetComponent<Rigidbody>().rotation = transform.rotation;
     }
 }
