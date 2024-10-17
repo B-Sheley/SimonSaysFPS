@@ -27,7 +27,7 @@ public class CameraController : MonoBehaviour
     {
         transform.position = cameraPosition.position;
         float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * xSensitivity;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * ySensitivity;
+        float mouseY = -Input.GetAxisRaw("Mouse Y") * Time.deltaTime * ySensitivity;
 
         yRotation += mouseX;
         yRotation = Mathf.Clamp(yRotation, -90f, 90f);
