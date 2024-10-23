@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Ground
   - Target
+  - RedTarget
+  - BlueTarget
+  - YellowTarget
+  - GreenTarget
   layers:
   - Default
   - TransparentFX
