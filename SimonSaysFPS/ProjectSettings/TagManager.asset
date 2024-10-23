@@ -10,6 +10,7 @@ TagManager:
   - BlueTarget
   - YellowTarget
   - GreenTarget
+  - Bullet
   layers:
   - Default
   - TransparentFX

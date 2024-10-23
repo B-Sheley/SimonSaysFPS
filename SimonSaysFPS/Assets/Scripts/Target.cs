@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    [SerializeField] string TargetColor;
+    [SerializeField] string targetColor;
     
 
     private void Awake()
     {
-        if(TargetColor == "Red")
+        if(targetColor == "Red")
         {
             gameObject.GetComponent<Light>().color = Color.red;
         }
-        else if(TargetColor == "Blue")
+        else if(targetColor == "Blue")
         {
             gameObject.GetComponent<Light>().color = Color.blue;
         }
-        else if (TargetColor == "Green")
+        else if (targetColor == "Green")
         {
             gameObject.GetComponent<Light>().color = Color.green;
         }
-        else if (TargetColor == "Yellow")
+        else if (targetColor == "Yellow")
         {
             gameObject.GetComponent<Light>().color = Color.yellow;
         }
@@ -42,8 +42,12 @@ public class Target : MonoBehaviour
         
     }
 
-    private void OnDestroy()
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(TargetColor);
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Debug.Log(targetColor + "Hit");
+        }
     }
+
 }
