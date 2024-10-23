@@ -345,6 +345,14 @@ PrefabInstance:
       propertyPath: TargetColor
       value: Green
       objectReference: {fileID: 0}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 565848108}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: targetColor
+      value: Green
+      objectReference: {fileID: 0}
     - target: {fileID: 8218566067695049078, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.325713
@@ -404,6 +412,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: TargetColor
+      value: Red
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 565848108}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: targetColor
       value: Red
       objectReference: {fileID: 0}
     - target: {fileID: 8218566067695049078, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
@@ -499,6 +515,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f046bb11357e0a40a19c7223ca33771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorList: []
+  currentColor: 
   currentColorText: {fileID: 1346563043}
 --- !u!1 &616833487 stripped
 GameObject:
@@ -1161,6 +1179,14 @@ PrefabInstance:
       propertyPath: TargetColor
       value: Blue
       objectReference: {fileID: 0}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 565848108}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: targetColor
+      value: Blue
+      objectReference: {fileID: 0}
     - target: {fileID: 8218566067695049078, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.325713
@@ -1220,6 +1246,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: TargetColor
+      value: Yellow
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 565848108}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: targetColor
       value: Yellow
       objectReference: {fileID: 0}
     - target: {fileID: 8218566067695049078, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}

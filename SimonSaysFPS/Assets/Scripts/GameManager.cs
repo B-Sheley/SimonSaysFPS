@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private List<string> colorList = new List<string>();
-    private string currentColor;
+    public List<string> colorList = new List<string>();
+    public string currentColor;
     private int colorNum;
     [SerializeField] TextMeshProUGUI currentColorText;
 
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void colorChange() {
+    public void colorChange() {
         colorNum = Random.Range(1, 5);
         if(colorNum == 1) { currentColor = "Red"; }
         else if (colorNum == 2) { currentColor = "Blue"; }
