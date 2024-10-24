@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public string currentColor;
     private int colorNum;
     [SerializeField] TextMeshProUGUI currentColorText;
+    private int currentColorNum = 0;
+    public bool currentColorCheck;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +46,16 @@ public class GameManager : MonoBehaviour
             Debug.Log(colorList[i]);
         }
     
+    }
+
+    public void colorListCheck()
+    {
+       
+    }
+
+    private void colorListDisplay()
+    {
+
     }
 
 
