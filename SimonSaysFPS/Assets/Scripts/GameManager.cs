@@ -12,9 +12,11 @@ public class GameManager : MonoBehaviour
     private int colorNum;
     [SerializeField] TextMeshProUGUI currentColorText;
     [SerializeField] TextMeshProUGUI currentScoreText;
+    [SerializeField] TextMeshProUGUI currentHighScoreText;
     public bool currentColorCheck;
     public int currentListInum = 0;
     public int score = 0;
+    public int highScore = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class GameManager : MonoBehaviour
     {
         currentColorText.text = "Color: " + currentColor;
         currentScoreText.text = "Score: " + score.ToString();
+        currentHighScoreText.text = "High Score: " + highScore.ToString();
     }
 
     public void colorChange() {
@@ -74,6 +77,10 @@ public class GameManager : MonoBehaviour
 
     public void newColorListOnLoss()
     {
+        if(score > highScore)
+        {
+            highScore = score;
+        }
         score = 0;
         colorList.Clear();
         colorChange();
