@@ -66,10 +66,21 @@ public class GameManager : MonoBehaviour
 
     private void colorListRestartCurrentList()
     {
-        score += 50;
+        score += 1;
         currentListInum = 1;
         currentColor = colorList[0];
         colorChange();
+    }
+
+    public void newColorListOnLoss()
+    {
+        score = 0;
+        colorList.Clear();
+        colorChange();
+        currentListInum = 0;
+        currentColor = colorList[currentListInum];
+        currentListInum = 1;
+
     }
 
 }
