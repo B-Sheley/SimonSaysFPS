@@ -11,9 +11,10 @@ public class GameManager : MonoBehaviour
     public string newColor;
     private int colorNum;
     [SerializeField] TextMeshProUGUI currentColorText;
-    private int currentColorNum = 0;
+    [SerializeField] TextMeshProUGUI currentScoreText;
     public bool currentColorCheck;
     public int currentListInum = 0;
+    public int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +22,13 @@ public class GameManager : MonoBehaviour
         colorChange();
         currentColor = colorList[currentListInum];
         currentListInum++;
-        Debug.Log("Current Inum: " + currentListInum);
-        Debug.Log("Current List Count: " + colorList.Count);
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentColorText.text = currentColor;
+        currentColorText.text = "Color: " + currentColor;
+        currentScoreText.text = "Score: " + score.ToString();
     }
 
     public void colorChange() {
@@ -52,8 +52,6 @@ public class GameManager : MonoBehaviour
 
     public void colorListIterate()
     {
-        Debug.Log("Current Inum: " + currentListInum);
-        Debug.Log("Current List Count: " + colorList.Count);
         if(currentListInum < colorList.Count)
         {
             currentColor = colorList[currentListInum];
@@ -68,6 +66,7 @@ public class GameManager : MonoBehaviour
 
     private void colorListRestartCurrentList()
     {
+        score += 50;
         currentListInum = 1;
         currentColor = colorList[0];
         colorChange();

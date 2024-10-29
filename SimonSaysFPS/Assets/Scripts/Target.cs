@@ -50,6 +50,16 @@ public class Target : MonoBehaviour
         {
             gameManager.GetComponent<GameManager>().colorListIterate();
         }
+        else if(collision.gameObject.tag == "Bullet" && gameManager.GameObject().GetComponent<GameManager>().currentColor != targetColor)
+        {
+            if(gameManager.GetComponent<GameManager>().score > 0)
+            {
+                gameManager.GetComponent<GameManager>().score -= 25;
+                if(gameManager.GetComponent<GameManager>().score <= 0){
+                    gameManager.GetComponent<GameManager>().score = 0;
+                }
+            }
+        }
         
     }
 
