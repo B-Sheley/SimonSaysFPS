@@ -8,34 +8,33 @@ public class GameManager : MonoBehaviour
 {
     public List<string> colorList = new List<string>();
     public string currentColor;
+    public string newColor;
     private int colorNum;
     [SerializeField] TextMeshProUGUI currentColorText;
     private int currentColorNum = 0;
     public bool currentColorCheck;
+    public int currentListInum = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         colorChange();
+        currentColor = colorList[currentListInum];
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            colorChange();
-        }
+        currentColorText.text = currentColor;
     }
 
     public void colorChange() {
         colorNum = Random.Range(1, 5);
-        if(colorNum == 1) { currentColor = "Red"; }
-        else if (colorNum == 2) { currentColor = "Blue"; }
-        else if (colorNum == 3) { currentColor = "Green"; }
-        else { currentColor = "Yellow"; }
-        currentColorText.text = currentColor;
-        colorAdd(currentColor);
+        if(colorNum == 1) { newColor = "Red"; }
+        else if (colorNum == 2) { newColor = "Blue"; }
+        else if (colorNum == 3) { newColor = "Green"; }
+        else { newColor = "Yellow"; }
+        colorAdd(newColor);
     }
 
     private void colorAdd(string s) {
@@ -48,15 +47,25 @@ public class GameManager : MonoBehaviour
     
     }
 
-    public void colorListCheck()
+    public void colorListIterate()
     {
-       
+        if(currentListInum < colorList.Count)
+        {
+            currentColor = colorList[currentListInum];
+            currentListInum++;
+        }
+        else 
+        { 
+            colorListRestartCurrentList(); 
+            
+        }
     }
 
-    private void colorListDisplay()
+    private void colorListRestartCurrentList()
     {
-
+        currentListInum = 0;
+        currentColor = colorList[0];
+        colorChange();
     }
-
 
 }

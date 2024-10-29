@@ -48,8 +48,7 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet" && gameManager.GameObject().GetComponent<GameManager>().currentColor == targetColor)
         {
-            Debug.Log(targetColor + "Hit");
-            gameManager.GetComponent<GameManager>().colorChange();
+            gameManager.GetComponent<GameManager>().colorListIterate();
         }
         
     }
