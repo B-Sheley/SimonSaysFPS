@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -24,14 +25,20 @@ public class GameManager : MonoBehaviour
         colorChange();
         currentColor = colorList[currentListInum];
         currentListInum++;
+        //StartCoroutine(displayColorList());
     }
 
     // Update is called once per frame
     void Update()
     {
-        currentColorText.text = "Color: " + currentColor;
+        //currentColorText.text = "Color: " + currentColor;
         currentScoreText.text = "Score: " + score.ToString();
         currentHighScoreText.text = "High Score: " + highScore.ToString();
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            StartCoroutine(displayColorList());
+        }
     }
 
     public void colorChange() {
@@ -50,7 +57,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(colorList[i]);
         }
-    
+        StartCoroutine(displayColorList());
+
     }
 
     public void colorListIterate()
@@ -73,6 +81,7 @@ public class GameManager : MonoBehaviour
         currentListInum = 1;
         currentColor = colorList[0];
         colorChange();
+        
     }
 
     public void newColorListOnLoss()
@@ -93,6 +102,21 @@ public class GameManager : MonoBehaviour
     public void colorlistShow()
     {
 
+    }
+
+    public IEnumerator displayColorList()
+    {
+        for (int i = 0; i < colorList.Count; i++)
+        {
+            yield return new WaitForSeconds(.5f);
+            currentColorText.gameObject.SetActive(false);
+            yield return new WaitForSeconds(.35f);
+            currentColorText.text = colorList[i];
+            yield return new WaitForSeconds(.35f);
+            currentColorText.gameObject.SetActive(true);
+        }
+        yield return new WaitForSeconds(.5f);
+        currentColorText.gameObject.SetActive(false);
     }
 
 }
