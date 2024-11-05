@@ -90,4 +90,9 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void colorlistShow()
+    {
+
+    }
+
 }
