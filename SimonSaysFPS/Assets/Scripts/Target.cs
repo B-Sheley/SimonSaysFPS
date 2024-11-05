@@ -8,8 +8,8 @@ public class Target : MonoBehaviour
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
     [SerializeField] float moveSpeed;
-    private int movePointLR;
-    private int movePointUD;
+    private bool doneMoving = true;
+   
 
 
     private void Awake()
@@ -44,10 +44,11 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movePointLR = Random.Range(-1, 2);
-        movePointUD = Random.Range(-1, 2);
-        transform.Translate(movePointLR * Vector2.right * moveSpeed * Time.deltaTime);
-        transform.Translate(movePointUD * Vector2.up * moveSpeed * Time.deltaTime);
+        if(doneMoving == true)
+        {
+            StartCoroutine(moveAround(Random.Range(-1, 2), Random.Range(-1, 2)));
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -61,6 +62,19 @@ public class Target : MonoBehaviour
             gameManager.GetComponent<GameManager>().newColorListOnLoss();
         }
         
+    }
+
+    public IEnumerator moveAround(int r, int u)
+    {
+        doneMoving = false;
+        yield return new WaitForSeconds(.025f);
+        transform.Translate(r * Vector3.right * moveSpeed * Time.deltaTime);
+        transform.Translate(u * Vector3.up * moveSpeed * Time.deltaTime);
+        yield return new WaitForSeconds(.025f);
+        doneMoving = true;
+
+
+
     }
 
 }
