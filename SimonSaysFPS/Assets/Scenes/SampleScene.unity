@@ -237,6 +237,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: TargetColor
       value: Green
       objectReference: {fileID: 0}
@@ -295,7 +299,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2080546764}
   m_SourcePrefab: {fileID: 100100000, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
 --- !u!1001 &388507438
 PrefabInstance:
@@ -305,6 +312,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: TargetColor
       value: Red
@@ -364,8 +375,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1052137019}
   m_SourcePrefab: {fileID: 100100000, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+--- !u!1 &558028672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+  m_PrefabInstance: {fileID: 1636828985}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &558028677
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558028672}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &565848108
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,6 +471,38 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9961f816c6a72834d806636a977028a1, type: 3}
   m_PrefabInstance: {fileID: 1978100469}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &705262326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+  m_PrefabInstance: {fileID: 1468526009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &705262331
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705262326}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,6 +806,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1052137014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+  m_PrefabInstance: {fileID: 388507438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1052137019
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1052137014}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1217300431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1488,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: TargetColor
       value: Blue
       objectReference: {fileID: 0}
@@ -1436,7 +1550,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 705262331}
   m_SourcePrefab: {fileID: 100100000, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
 --- !u!1001 &1636828985
 PrefabInstance:
@@ -1446,6 +1563,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      propertyPath: moveSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3953028697423696228, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
       propertyPath: TargetColor
       value: Yellow
@@ -1505,7 +1626,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 558028677}
   m_SourcePrefab: {fileID: 100100000, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
 --- !u!1 &1747410826
 GameObject:
@@ -1807,6 +1931,38 @@ MonoBehaviour:
   bulletSpawnPosition: {fileID: 762569650}
   bulletObject: {fileID: 5059784332514781136, guid: d17422b60b2976845999dea35669cb05, type: 3}
   bulletSpeed: 10
+--- !u!1 &2080546759 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8738644535799350220, guid: d66791b9f49db3444afd1be3ae6350e2, type: 3}
+  m_PrefabInstance: {fileID: 334496563}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &2080546764
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2080546759}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

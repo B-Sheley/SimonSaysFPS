@@ -7,7 +7,10 @@ public class Target : MonoBehaviour
 {
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
-    
+    [SerializeField] float moveSpeed;
+    private int movePointLR;
+    private int movePointUD;
+
 
     private void Awake()
     {
@@ -41,7 +44,10 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        movePointLR = Random.Range(-1, 2);
+        movePointUD = Random.Range(-1, 2);
+        transform.Translate(movePointLR * Vector2.right * moveSpeed * Time.deltaTime);
+        transform.Translate(movePointUD * Vector2.up * moveSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
