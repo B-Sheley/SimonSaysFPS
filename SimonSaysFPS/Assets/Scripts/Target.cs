@@ -10,6 +10,7 @@ public class Target : MonoBehaviour
     [SerializeField] float moveSpeed;
     private bool doneMoving = true;
     private int moveNum;
+    private Vector3 movePos;
    
 
 
@@ -45,11 +46,17 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(doneMoving == true)
-        {
-            StartCoroutine(moveAround(Random.Range(-1, 2), Random.Range(-1, 2)));
-        }
-        
+        //if(doneMoving == true)
+        //{
+        //    StartCoroutine(moveAround(Random.Range(-2, 3), Random.Range(-2, 3)));
+        //}
+
+        movePos = new Vector3(transform.position.x, transform.position.y + Random.Range(-2, 3), transform.position.z + Random.Range(-2, 3));
+        transform.position = Vector3.MoveTowards(transform.position, movePos, moveSpeed);
+
+        //moveNum = Random.Range(1, 5);
+        //transform.Translate(Random.Range(-1, 2) * Vector3.right * moveSpeed * Time.deltaTime);
+        //transform.Translate(Random.Range(-1, 2) * Vector3.up * moveSpeed * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -67,15 +74,22 @@ public class Target : MonoBehaviour
 
     public IEnumerator moveAround(int r, int u)
     {
+        //doneMoving = false;
+        //moveNum = Random.Range(15, 25);
+        //yield return new WaitForSeconds(.1f);
+        //for (int i = 0; i < moveNum; i++)
+        //{
+        //    transform.Translate(r * Vector3.right * moveSpeed * Time.deltaTime);
+        //    transform.Translate(u * Vector3.up * moveSpeed * Time.deltaTime);
+        //}
+        //yield return new WaitForSeconds(.1f);
+        //doneMoving = true;
+
         doneMoving = false;
-        moveNum = Random.Range(1, 5);
-        yield return new WaitForSeconds(.1f);
-        for (int i = 0; i < moveNum; i++)
-        {
-            transform.Translate(r * Vector3.right * moveSpeed * Time.deltaTime);
-            transform.Translate(u * Vector3.up * moveSpeed * Time.deltaTime);
-        }
-        yield return new WaitForSeconds(.1f);
+        yield return new WaitForSeconds(.25f);
+        movePos = new Vector3(transform.position.x, transform.position.y + r, transform.position.z + u);
+        transform.position = Vector3.MoveTowards(transform.position, movePos, moveSpeed);
+        yield return new WaitForSeconds(.25f);
         doneMoving = true;
 
 
