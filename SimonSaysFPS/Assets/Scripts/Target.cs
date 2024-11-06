@@ -9,6 +9,7 @@ public class Target : MonoBehaviour
     [SerializeField] GameObject gameManager;
     [SerializeField] float moveSpeed;
     private bool doneMoving = true;
+    private int moveNum;
    
 
 
@@ -67,10 +68,14 @@ public class Target : MonoBehaviour
     public IEnumerator moveAround(int r, int u)
     {
         doneMoving = false;
-        yield return new WaitForSeconds(.025f);
-        transform.Translate(r * Vector3.right * moveSpeed * Time.deltaTime);
-        transform.Translate(u * Vector3.up * moveSpeed * Time.deltaTime);
-        yield return new WaitForSeconds(.025f);
+        moveNum = Random.Range(1, 5);
+        yield return new WaitForSeconds(.1f);
+        for (int i = 0; i < moveNum; i++)
+        {
+            transform.Translate(r * Vector3.right * moveSpeed * Time.deltaTime);
+            transform.Translate(u * Vector3.up * moveSpeed * Time.deltaTime);
+        }
+        yield return new WaitForSeconds(.1f);
         doneMoving = true;
 
 
