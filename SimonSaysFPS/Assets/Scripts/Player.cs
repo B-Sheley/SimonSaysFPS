@@ -35,6 +35,15 @@ public class Player : MonoBehaviour
 
         rb.drag = groundDrag;
 
+        if(transform.position.z >= 9)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+
+        }
+
     }
 
     private void FixedUpdate()
