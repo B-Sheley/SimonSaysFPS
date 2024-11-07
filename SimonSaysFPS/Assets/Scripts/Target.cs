@@ -7,10 +7,10 @@ public class Target : MonoBehaviour
 {
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
-    [SerializeField] Transform wallPos;
     public float moveSpeed = 1f;
+    private int movePoint = -1;
 
-   
+
 
 
     private void Awake()
@@ -45,8 +45,7 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, wallPos.position, moveSpeed);
-        //transform.Translate(transform.position * Vector3.left * moveSpeed * Time.deltaTime);
+        transform.Translate(movePoint * Vector3.forward * moveSpeed * Time.deltaTime);
         if (transform.position.x <= -50)
         {
             Destroyed();
