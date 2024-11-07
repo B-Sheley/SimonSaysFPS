@@ -7,6 +7,7 @@ public class Target : MonoBehaviour
 {
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
+    public float moveSpeed = 1f;
    
 
 
@@ -55,10 +56,6 @@ public class Target : MonoBehaviour
         else if(collision.gameObject.tag == "Bullet" && gameManager.GameObject().GetComponent<GameManager>().currentColor != targetColor)
         {
             gameManager.GetComponent<GameManager>().newColorListOnLoss();
-            Destroyed();
-        }
-        else if(collision.gameObject.tag == "Target")
-        {
             Destroyed();
         }
     }
