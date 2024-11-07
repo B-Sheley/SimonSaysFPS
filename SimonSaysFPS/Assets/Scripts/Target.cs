@@ -45,9 +45,9 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //transform.position = Vector3.MoveTowards(transform.position, wallPos.position, moveSpeed);
-        transform.position  = Vector3.left * moveSpeed;
-        if(transform.position.x <= -50)
+        transform.position = Vector3.MoveTowards(transform.position, wallPos.position, moveSpeed);
+        //transform.Translate(transform.position * Vector3.left * moveSpeed * Time.deltaTime);
+        if (transform.position.x <= -50)
         {
             Destroyed();
         }
