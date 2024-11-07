@@ -7,7 +7,9 @@ public class Target : MonoBehaviour
 {
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
+    [SerializeField] Transform wallPos;
     public float moveSpeed = 1f;
+
    
 
 
@@ -43,7 +45,12 @@ public class Target : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        //transform.position = Vector3.MoveTowards(transform.position, wallPos.position, moveSpeed);
+        transform.position  = Vector3.left * moveSpeed;
+        if(transform.position.x <= -50)
+        {
+            Destroyed();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
