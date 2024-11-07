@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+        
     }
 
     // Update is called once per frame
@@ -34,15 +35,7 @@ public class Player : MonoBehaviour
         SpeedMax();
 
         rb.drag = groundDrag;
-
-        if(transform.position.z >= 9)
-        {
-            moveSpeed = 0;
-        }
-        else
-        {
-
-        }
+        
 
     }
 
