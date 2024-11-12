@@ -2276,7 +2276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpawnPosition: {fileID: 762569650}
-  bulletObject: {fileID: 4773861576227388539, guid: 843eb98000bb16d43a052d6c10cd618d, type: 3}
+  bulletObject: {fileID: 5059784332514781136, guid: d17422b60b2976845999dea35669cb05, type: 3}
   bulletSpeed: 100
 --- !u!114 &2024437921 stripped
 MonoBehaviour:
