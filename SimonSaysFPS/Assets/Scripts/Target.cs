@@ -48,7 +48,7 @@ public class Target : MonoBehaviour
     void Update()
     {
         transform.Translate(movePoint * Vector3.forward * moveSpeed * Time.deltaTime);
-        if (transform.position.x <= -50)
+        if (transform.position.x <= -58)
         {
             Destroyed();
         }
