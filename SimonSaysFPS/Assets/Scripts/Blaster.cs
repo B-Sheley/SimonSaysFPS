@@ -17,7 +17,7 @@ public class Blaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetMouseButtonDown(0))
         {
             var bullet = Instantiate(bulletObject, bulletSpawnPosition.position, Quaternion.identity);
             //bullet.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
