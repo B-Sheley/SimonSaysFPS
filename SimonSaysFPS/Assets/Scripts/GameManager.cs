@@ -14,6 +14,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI currentColorText;
     [SerializeField] TextMeshProUGUI currentScoreText;
     [SerializeField] TextMeshProUGUI currentHighScoreText;
+    [SerializeField] Target targetRed;
+    [SerializeField] Target targetBlue;
+    [SerializeField] Target targetGreen;
+    [SerializeField] Target targetYellow;
     public bool currentColorCheck;
     public int currentListInum = 0;
     public int score = 0;
@@ -77,6 +81,10 @@ public class GameManager : MonoBehaviour
 
     private void colorListRestartCurrentList()
     {
+        targetRed.gameObject.GetComponent<Target>().SpeedIncrease();
+        targetBlue.gameObject.GetComponent<Target>().SpeedIncrease();
+        targetGreen.gameObject.GetComponent<Target>().SpeedIncrease();
+        targetYellow.gameObject.GetComponent<Target>().SpeedIncrease();
         score += 1;
         currentListInum = 1;
         currentColor = colorList[0];
@@ -86,7 +94,11 @@ public class GameManager : MonoBehaviour
 
     public void newColorListOnLoss()
     {
-        if(score > highScore)
+        targetRed.gameObject.GetComponent<Target>().SpeedReset();
+        targetBlue.gameObject.GetComponent<Target>().SpeedReset();
+        targetGreen.gameObject.GetComponent<Target>().SpeedReset();
+        targetYellow.gameObject.GetComponent<Target>().SpeedReset();
+        if (score > highScore)
         {
             highScore = score;
         }

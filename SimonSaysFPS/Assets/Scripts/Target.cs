@@ -8,6 +8,7 @@ public class Target : MonoBehaviour
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
     public float moveSpeed = 1f;
+    public float originMoveSpeed = 1f;
     private int movePoint = -1;
 
 
@@ -33,8 +34,9 @@ public class Target : MonoBehaviour
         }
         else
         {
-            gameObject.GetComponent<Light>().color = Color.white;
+            gameObject.GetComponent<Light>().color = Color.black;
         }
+        originMoveSpeed = moveSpeed;
     }
     // Start is called before the first frame update
     void Start()
@@ -68,7 +70,17 @@ public class Target : MonoBehaviour
 
     public void Destroyed()
     {
-        transform.position = new Vector3 (Random.Range(-48,49), Random.Range(2, 8), Random.Range(9,53));
+        transform.position = new Vector3 (Random.Range(-20,45), Random.Range(2, 8), Random.Range(10,50));
+    }
+
+    public void SpeedIncrease()
+    {
+        moveSpeed += 1;
+    }
+
+    public void SpeedReset()
+    {
+        moveSpeed = originMoveSpeed;
     }
 
 }
