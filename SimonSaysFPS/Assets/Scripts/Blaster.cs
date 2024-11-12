@@ -20,6 +20,7 @@ public class Blaster : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             var bullet = Instantiate(bulletObject, bulletSpawnPosition.position, bulletSpawnPosition.rotation);
+            //bullet.GetComponent<Transform>().rotation = (0f, 0f, 0f);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPosition.forward * bulletSpeed;
         }
     }
