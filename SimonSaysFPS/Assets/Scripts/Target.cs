@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    public AudioSource source;
+    public AudioClip clip;
     [SerializeField] string targetColor;
     [SerializeField] GameObject gameManager;
     public float moveSpeed = 1f;
@@ -58,11 +60,13 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet" && gameManager.GameObject().GetComponent<GameManager>().currentColor == targetColor)
         {
+            source.PlayOneShot(clip);
             gameManager.GetComponent<GameManager>().colorListIterate();
             Destroyed();
         }
         else if(collision.gameObject.tag == "Bullet" && gameManager.GameObject().GetComponent<GameManager>().currentColor != targetColor)
         {
+            source.PlayOneShot(clip);
             gameManager.GetComponent<GameManager>().newColorListOnLoss();
             Destroyed();
         }
