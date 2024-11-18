@@ -79,7 +79,7 @@ public class Target : MonoBehaviour
 
     public void SpeedIncrease()
     {
-        moveSpeed += 2;
+        moveSpeed += 1;
     }
 
     public void SpeedReset()

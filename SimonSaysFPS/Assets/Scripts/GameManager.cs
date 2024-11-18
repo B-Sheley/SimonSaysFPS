@@ -8,7 +8,7 @@ using static Unity.VisualScripting.Member;
 
 public class GameManager : MonoBehaviour
 {
-    public List<string> colorList = new List<string>();
+    [SerializeField] public List<string> colorList = new List<string>();
     public string currentColor;
     public string newColor;
     private int colorNum;
@@ -118,13 +118,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void colorlistShow()
-    {
-
-    }
-
     public IEnumerator displayColorList()
     {
+        Debug.Log("displayColorList");
         for (int i = 0; i < colorList.Count; i++)
         {
             yield return new WaitForSeconds(.5f);
