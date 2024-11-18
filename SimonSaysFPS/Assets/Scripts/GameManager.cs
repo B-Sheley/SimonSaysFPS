@@ -4,6 +4,7 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using static Unity.VisualScripting.Member;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,10 @@ public class GameManager : MonoBehaviour
     public int currentListInum = 0;
     public int score = 0;
     public int highScore = 0;
+    public AudioSource scoreSource;
+    public AudioClip scoreClip;
+    public AudioSource failSource;
+    public AudioClip failClip;
 
     // Start is called before the first frame update
     void Start()
@@ -86,6 +91,7 @@ public class GameManager : MonoBehaviour
         targetGreen.gameObject.GetComponent<Target>().SpeedIncrease();
         targetYellow.gameObject.GetComponent<Target>().SpeedIncrease();
         score += 1;
+        scoreSource.PlayOneShot(scoreClip);
         currentListInum = 1;
         currentColor = colorList[0];
         colorChange();
@@ -103,6 +109,7 @@ public class GameManager : MonoBehaviour
             highScore = score;
         }
         score = 0;
+        failSource.PlayOneShot(failClip);
         colorList.Clear();
         colorChange();
         currentListInum = 0;
