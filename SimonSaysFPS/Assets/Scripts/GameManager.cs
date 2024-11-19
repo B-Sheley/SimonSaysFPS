@@ -34,16 +34,13 @@ public class GameManager : MonoBehaviour
         colorChange();
         currentColor = colorList[currentListInum];
         currentListInum++;
-        //StartCoroutine(displayColorList());
     }
 
     // Update is called once per frame
     void Update()
     {
-        //currentColorText.text = "Color: " + currentColor;
         currentScoreText.text = "Score: " + score.ToString();
         currentHighScoreText.text = "High Score: " + highScore.ToString();
-
         if (Input.GetKeyDown(KeyCode.Z))
         {
             StartCoroutine(displayColorList());
@@ -67,7 +64,6 @@ public class GameManager : MonoBehaviour
             Debug.Log(colorList[i]);
         }
         StartCoroutine(displayColorList());
-
     }
 
     public void colorListIterate()
@@ -80,7 +76,6 @@ public class GameManager : MonoBehaviour
         else 
         { 
             colorListRestartCurrentList(); 
-            
         }
     }
 
@@ -110,7 +105,8 @@ public class GameManager : MonoBehaviour
         }
         score = 0;
         failSource.PlayOneShot(failClip);
-        StopCoroutine(displayColorList());
+        //StopCoroutine(displayColorList());
+        StopAllCoroutines();
         colorList.Clear();
         colorChange();
         currentListInum = 0;

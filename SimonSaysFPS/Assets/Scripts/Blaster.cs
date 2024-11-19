@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Blaster : MonoBehaviour
 {
-    public AudioSource source; 
-    public AudioClip clip;
-
+    public AudioSource blasterSource; 
+    public AudioClip blasterClip;
     [SerializeField] Transform bulletSpawnPosition;
     [SerializeField] GameObject bulletObject;
     public float bulletSpeed = 10f;
@@ -24,8 +23,7 @@ public class Blaster : MonoBehaviour
         {
             var bullet = Instantiate(bulletObject, bulletSpawnPosition.position, Quaternion.identity);
             bullet.GetComponent<Rigidbody>().velocity = bulletSpawnPosition.forward * bulletSpeed;
-            source.PlayOneShot(clip);
-
+            blasterSource.PlayOneShot(blasterClip);
         }
     }
 }

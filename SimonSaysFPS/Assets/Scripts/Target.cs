@@ -13,9 +13,6 @@ public class Target : MonoBehaviour
     public float originMoveSpeed = 1f;
     private int movePoint = -1;
 
-
-
-
     private void Awake()
     {
         if(targetColor == "Red")

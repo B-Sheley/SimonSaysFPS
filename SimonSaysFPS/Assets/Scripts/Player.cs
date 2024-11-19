@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
     public float groundDrag;
     [SerializeField] float moveSpeed;
     [SerializeField] float jumpForce;
     private bool isGrounded = true;
-
-
     public Transform orientation;
-
     float horizontalInput;
     float verticalInput;
-
     Vector3 direction;
-
     Rigidbody rb;
 
     // Start is called before the first frame update
@@ -25,7 +19,6 @@ public class Player : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
-        
     }
 
     // Update is called once per frame
@@ -33,16 +26,12 @@ public class Player : MonoBehaviour
     {
         playerInput();
         SpeedMax();
-
         rb.drag = groundDrag;
-        
-
     }
 
     private void FixedUpdate()
     {
         playerMove();
-
     }
 
     private void playerInput()
@@ -53,22 +42,17 @@ public class Player : MonoBehaviour
         {
             Jump();
         }
-
     }
 
     private void playerMove()
     {
         direction = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
         rb.AddForce(direction.normalized * moveSpeed * 10f, ForceMode.Force);
-        
-
     }
 
     private void SpeedMax()
     {
         Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
         if (flatVel.magnitude > moveSpeed)
         {
             Vector3 limitedVel = flatVel.normalized * moveSpeed;
