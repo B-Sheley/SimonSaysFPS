@@ -120,7 +120,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator displayColorList()
     {
-        Debug.Log("displayColorList");
+        Debug.Log("displayColorList"); 
         for (int i = 0; i < colorList.Count; i++)
         {
             yield return new WaitForSeconds(.5f);
