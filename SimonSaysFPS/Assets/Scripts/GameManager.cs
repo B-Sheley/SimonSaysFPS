@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
         }
         score = 0;
         failSource.PlayOneShot(failClip);
+        StopCoroutine(displayColorList());
         colorList.Clear();
         colorChange();
         currentListInum = 0;
